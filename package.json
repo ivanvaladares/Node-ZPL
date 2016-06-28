@@ -1,0 +1,17 @@
+{
+  "name": "Node-ZPL",
+  "version": "1.0.0",
+  "main": "index.html",
+  "port" : 3131,
+  "window": {
+    "toolbar": false,
+    "frame": true,
+    "icon": "icon.png",
+    "fullscreen": false,
+    "resizable": false,
+    "width": 600,
+    "height": 400
+  },
+  "dependencies": {
+  }
+}

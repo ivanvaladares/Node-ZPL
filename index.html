@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Node-ZPL</title>
+		<style>
+
+		* { margin: 0; padding: 0; box-sizing: border-box; font-family: "Lucida Console", Monaco, monospace, "Courier New", Courier; }
+
+		</style>
+	</head>
+	<body onselect="return false">
+
+		cria um html bonitinho pra explicar o que é isso...
+
+    	<div id="saida">
+
+        </div>
+
+	</body>
+
+	<script>
+		var pkg = require(global.__dirname + '/package.json')
+		var portaServidor = pkg.port;
+	</script>
+
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/server.js"></script>
+
+</html>
