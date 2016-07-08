@@ -1,0 +1,64 @@
+@charset "utf-8";
+/* CSS Document */
+html{ 
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Lucida Console", Monaco, monospace, "Courier New", Courier;
+	background: url('../images/layout.png') top center no-repeat;
+	overflow: hidden;
+}
+.header{
+	position: relative;
+	height: 70px;
+	width: inherit;
+}
+.headerPrinter{
+	position: relative;
+	height: 85px;
+	width: inherit;
+}
+.main{
+	position: relative;
+	height: 250px;
+	width: inherit;
+	vertical-align: middle;
+}
+.main .content{
+	position: relative;
+	text-align: center;
+	vertical-align: middle;
+	height: inherit;
+}
+.main .content p{
+	position: relative;
+	top: 90px;
+	color: #333;
+	font-size: 12px;
+	font-weight: normal;
+}
+.footer{
+	position: relative;
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 30px;
+	height: 27px;
+	width: inherit;
+}
+.footer .changePrinter{
+	cursor: pointer;
+}
+
+form{
+	position: relative;
+	top: 55px;
+	margin-bottom: 30px;
+	color: #333;
+	font-size: 12px;
+	font-weight: normal;
+}
+form input{
+	line-height: 1.7em;
+	margin-bottom: 5px;s
+	padding: 0 3px 0 3px;
+}

@@ -4,12 +4,52 @@ var fs  = require('fs');
 var url = require('url');
 var path = require('path');
 
+$(function () {
+
+	$( document ).on('click', '#changePrinter', function(){
+		window.location.href = "printer.html"
+	});
+	
+	$( document ).on('click', '#returnButton', function(){
+		window.history.back();
+	});
+
+});
 
 // ini - code to control the window and the tray icon
 var win = gui.Window.get();
 var tray;
 
 win.on('minimize', function() {
+	this.hide();
+
+	tray = new gui.Tray({ icon: 'icon.png', tooltip: "INCA-ZPL" });
+
+	// Show window and remove tray when clicked
+	tray.on('click', function() {
+		win.show();
+		win.restore();
+		this.remove();
+		tray = null;
+		});
+
+	var menu = new gui.Menu();
+	menu.append(new gui.MenuItem({ type: 'normal', label: 'Sobre',
+
+		click: function() {
+			win.show();
+			win.restore();
+			this.remove();
+			tray = null;
+		}	
+
+	}));
+	tray.menu = menu;
+
+});
+win.minimize();
+
+win.on('close', function() {
 	this.hide();
 
 	tray = new gui.Tray({ icon: 'icon.png' });
@@ -20,14 +60,39 @@ win.on('minimize', function() {
 		win.restore();
 		this.remove();
 		tray = null;
-		});
+	});
+	
+	var menu = new gui.Menu();
+	menu.append(new gui.MenuItem({ type: 'normal', label: 'Sobre',
+
+		click: function() {
+			win.show();
+			win.restore();
+			this.remove();
+			tray = null;
+		}	
+
+	}));
+	tray.menu = menu;
+	
 });
 
-win.minimize();
 // end - code to control the window and the tray icon
 
 
+function menuRightClick(){
 
+	var menu = new gui.Menu();
+	
+	menu.append(new gui.MenuItem({ label: 'Item A' }));
+	menu.append(new gui.MenuItem({ label: 'Item B' }));
+	menu.append(new gui.MenuItem({ type: 'separator' }));
+	menu.append(new gui.MenuItem({ label: 'Item C' }));
+	
+	// Popup as context menu
+	menu.popup(10, 10);
+	
+};
 
 function handleRequest(request, response){
 
@@ -64,7 +129,7 @@ function handleRequest(request, response){
 		response.writeHead(501);
 		response.end("Not Implemented!");
 	}
-}
+};
 
 var server = http.createServer(handleRequest);
 
@@ -85,7 +150,7 @@ function copyFile(source, target) {
         rd.pipe(wr);
         
     });
-}
+};
 
 function printLabel(texto, impressora){
 	return new Promise(function(resolve, reject) {
@@ -104,4 +169,4 @@ function printLabel(texto, impressora){
 			});
 		}); 
 	});
-}
+};
