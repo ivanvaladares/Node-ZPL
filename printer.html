@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>NODE ZPL</title>
+		<link type="text/css" href="./css/node-zpl.css" rel="stylesheet" />
+
+	</head>
+	<body onselect="return false;">
+
+		<div class="headerPrinter" id="header">
+			&nbsp;
+		</div>
+
+		<div class="main" id="main">
+			<div class="content">
+				<form role="form">
+					<label class="title">Select printer:</label><br/><br/>
+					<input type="text" class="form-control" id="serverPrinter" name="serverPrinter" placeholder="Hostname or IP address">
+					<input type="text" class="form-control" id="device" name="device" placeholder="Device">
+					<input type="text" class="form-control" id="port" name="port" placeholder="Port name">
+					<button type="submit" class="btn btn-default">Submit</button>
+				</form>				
+			</div>
+		</div>
+		
+		<div class="footer" id="footer">
+			<button type="button" id="returnButton">Return</button>  
+		</div>
+
+    	<div id="saida">
+
+        </div>
+
+	</body>
+
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/selectPrinter.js"></script>
+
+</html>

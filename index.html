@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Node-ZPL</title>
-		<style>
+		<title>NODE ZPL</title>
+		<link type="text/css" href="./css/node-zpl.css" rel="stylesheet" />
 
-		* { margin: 0; padding: 0; box-sizing: border-box; font-family: "Lucida Console", Monaco, monospace, "Courier New", Courier; }
-
-		</style>
 	</head>
-	<body onselect="return false">
+	<body onselect="return false;">
 
-		cria um html bonitinho pra explicar o que é isso...
+		<div class="header" id="header">
+			&nbsp;
+		</div>
+
+		<div class="main" id="main">
+			<div class="content">
+				<p>Simple NWJS project that enables intranet and extranet websites send ZPL labels to network printers.<br/>
+				Needing to replace the printer, contact the technical support.</p>
+			</div>
+		</div>
+		
+		<div class="footer" id="footer">
+			<button type="button" id="changePrinter" class="changePrinter">Change printer</button>  
+		</div>
 
     	<div id="saida">
 
@@ -25,5 +35,4 @@
 
 	<script src="./js/jquery.min.js"></script>
 	<script src="./js/server.js"></script>
-
 </html>
